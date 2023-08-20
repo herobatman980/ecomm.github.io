@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/80f94435b1.js" crossorigin="anonymous"></script>
+  <title>ecomm| Products</title>
+  <style>
+    .buy-button {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      background-color: #10449f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #120ee1;
+    }
+
+
+    hr {
+      border: none;
+      background: #E0E4CC;
+      height: 1px;
+      /*   width:60%;
+  display:block;
+  margin-left:0; */
+    }
+
+    h1 {
+      margin: 12px;
+    }
+
+    .productcont {
+      display: flex;
+    }
+
+    .product {
+      padding: 1em;
+      border: 1px solid #E0E4CC;
+      margin-right: 1em;
+      border-radius: 5px;
+    }
+
+    .cart-container {
+      border: 1px solid #E0E4CC;
+      border-radius: 5px;
+      margin-top: 1em;
+      padding: 1em;
+    }
+
+    button,
+    input[type="submit"] {
+      border: 1px solid #FA6900;
+      color: #fff;
+      background: #F38630;
+      padding: 0.6em 1em;
+      font-size: 1em;
+      line-height: 1;
+      border-radius: 1.2em;
+      transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+
+    button:hover,
+    button:focus,
+    button:active,
+    input[type="submit"]:hover,
+    input[type="submit"]:focus,
+    input[type="submit"]:active {
+      background: #A7DBD8;
+      border-color: #69D2E7;
+      color: #000;
+      cursor: pointer;
+    }
+
+    table {
+      margin-bottom: 1em;
+      border-collapse: collapse;
+    }
+
+    table td,
+    table th {
+      text-align: left;
+      padding: 0.25em 1em;
+      border-bottom: 1px solid #E0E4CC;
+    }
+
+    #carttotals {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .cart-buttons {
+      width: auto;
+      margin-right: 0;
+      margin-left: auto;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em 0;
+    }
+
+    #emptycart {
+      margin-right: 1em;
+    }
+
+    table td:nth-last-child(1) {
+      text-align: right;
+    }
+
+    .message {
+      border-width: 1px 0px;
+      border-style: solid;
+      border-color: #A7DBD8;
+      color: #679996;
+      padding: 0.5em 0;
+      margin: 1em 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="#">E-comm</a>
+    </div>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-user">
+      <a href="login.html"><i class="fa fa-user"></i></a>
+      &ensp;
+      <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+    </div>
+  </nav>
+
+
+  <section class="products-section">
+    <div class="products-container">
+      <div class="product-card">
+        <img src="images/product1.jpg" alt="Product 1">
+        <h2 class="productname">Pots and pans</h2>
+        <p class="price"> <strong>Price: </strong> $10</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/product2.jpg" alt="Product 2">
+        <h2 class="productname">Spoons</h2>
+        <p class="price"> <strong>Price: </strong> $20</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/product3.jpeg" alt="Product 3">
+        <h2 class="productname">Pan</h2>
+        <p class="price"> <strong>Price: </strong> $30</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product4.jpeg" alt="Product 4">
+        <h2>Cuttlery</h2>
+        <p> <strong>Price: </strong> $40</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product 5.jpeg" alt="Product 5">
+        <h2>Utensils</h2>
+        <p> <strong>Price: </strong> $50</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product6.jpeg" alt="Product 6">
+        <h2>Plastic utensils</h2>
+        <p> <strong>Price: </strong> $60</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product7.jpg" alt="Product 6">
+        <h2>Spatula</h2>
+        <p> <strong>Price: </strong> $150</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product8.jpeg" alt="Product 6">
+        <h2>Knifes</h2>
+        <p> <strong>Price: </strong> $80</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product9.jpg" alt="Product 6">
+        <h2>oven mitts</h2>
+        <p> <strong>Price: </strong> $20</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product 10.jpeg" alt="Product 6">
+        <h2>Mixing bowl</h2>
+        <p> <strong>Price: </strong> $250</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product11.jpg" alt="Product 6">
+        <h2>peeler</h2>
+        <p> <strong>Price: </strong> $300</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product12.jpg" alt="Product 6">
+        <h2>tongs</h2>
+        <p> <strong>Price: </strong> $20</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product13.jpg" alt="Product 6">
+        <h2>ladle</h2>
+        <p> <strong>Price: </strong> $57</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product14.jpeg" alt="Product 6">
+        <h2>Plastic spoon</h2>
+        <p> <strong>Price: </strong> $80</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product15.jpeg" alt="Product 6">
+        <h2>spoon and forks</h2>
+        <p> <strong>Price: </strong> $65</p>
+        <button class="buy-button">Buy</button>
+        <button class="addtocart" onclick="addToCart()">Add To Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h4>About Us</h4>
+          <p>The ecomm is a kitchen supply store that offers a wide range of high-quality cookware, bakeware, and
+            kitchen gadgets. Our goal is to help home cooks and professional chefs alike create amazing meals with the
+            best tools available.</p>
+        </div>
+        <div class="col">
+          <h4>Contact Us</h4>
+          <p>123 Main Street<br> Sydney, Australia<br> Phone: (02) 555-1234<br> Email: info@ecomm.com.au</p>
+        </div>
+        <div class="col">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <div class="container">
+        <p>&copy; 2023 The ecomm. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script>
+
+    function addToCart() {
+
+      const productName = document.querySelector('.productname').textContent;
+      const price = document.querySelector('.price').textContent;
+
+
+      const cartItem = {
+        name: productName,
+        price: price
+      };
+
+
+      let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      cartItems.push(cartItem);
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
